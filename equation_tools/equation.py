@@ -3,10 +3,7 @@ from abc import ABC, abstractmethod, ABCMeta
 import numpy as np
 from numpy import sin, cos
 from numpy.linalg import solve as lin_solve, vector_norm, matrix_rank, LinAlgError, det
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 from enum import IntEnum
-import seaborn as sns
 
 __all__=(
     "BaseSolver",
@@ -453,29 +450,3 @@ if __name__ == '__main__':
     print(max(f1))
     # print(max(f2))
     # print(max(f3))
-
-
-    x1 = [a[0] for a, _ in res1]
-    y1 = [a[1] for a, _ in res1]
-    # x2 = [a[0] for a, _ in res2]
-    # y2 = [a[1] for a, _ in res2]
-    # x3 = [a[0] for a, _ in res3]
-    # y3 = [a[1] for a, _ in res3]
-    fig = plt.figure(figsize=(10, 6))
-    # ax = fig.add_subplot(projection="3d")
-    sns.lineplot(x=x1, y=y1, linestyle="--", marker='o', markersize=4, markevery=250, label="Модифицированный Эйлер", sort=False)
-    # sns.lineplot(x=x2, y=y2,linestyle="-.", marker='s', markersize=4, markevery=300, label="Простой Эйлер", sort=False)
-    # sns.lineplot(x=x3, y=y3,linestyle=":", marker='p', markersize=4, markevery=200, label="Рунге-Кутт", sort=False)
-    # plt.plot(x1, y1, "--", label="Модифицированный Эйлер", color="blue")
-    # plt.plot(x1[::30], y1[::30], "o", markersize=5, color="blue")
-    # plt.plot(x2, y2, "-.", label="Простой Эйлер", color="orange")
-    # plt.plot(x2[::20], y2[::20], "p", markersize=5, color="orange")
-    # plt.plot(x3, y3, ":", label="Рунге-Кутт", color="green")
-    # plt.plot(x3[::30], y3[::30], "s", markersize=5, color="green")
-    # plt.set_xlabel("x")
-    # plt.set_ylabel("y")
-    plt.grid()
-    plt.legend()
-    # plt.xlim((-0.5, 2))
-    # plt.ylim((-1.5, 1.5))
-    plt.show()
